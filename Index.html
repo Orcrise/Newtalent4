@@ -1,0 +1,774 @@
+<html lang="es">
+<head>
+    <base href=".">
+    <title>Consultora NewTalent: Servicios de Reclutamiento, Headhunting y Evaluaciones de Talento</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En NewTalent, ofrecemos servicios especializados de reclutamiento de personal, headhunting y evaluaciones psicom&#xe9;tricas para ayudar a las empresas a encontrar el talento adecuado. &#xa1;Conf&#xed;a en nuestros expertos en recursos humanos!">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<style>
+:root {
+  --primary: #6a0dad;  
+  --secondary: #8e44ad; 
+  --accent: #9b59b6;   
+  --light: #f5f7fa;
+  --dark: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: white;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+.hero {
+  margin-top: 80px;
+  padding: 6rem 5%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='rgba(255,255,255,0.1)' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,144C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  fill: var(--secondary);
+}
+
+.testimonials {
+  padding: 5rem 5%;
+  background: white;
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--light);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.quote-icon {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  fill: var(--secondary);
+  opacity: 0.3;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+.cta {
+  background: var(--light);
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--secondary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.contact-button:hover {
+  background: var(--primary);
+}
+
+.contact-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.footer {
+  background: #e6e6fa; 
+  color: white;
+  padding: 3rem 5%;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.footer-description {
+  max-width: 600px;
+}
+
+.footer-description h3 {
+  color: var(--primary);  
+  margin-bottom: 1rem;
+}
+
+.footer p,
+.footer-description,
+.footer-social {
+  color: black;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+}
+
+.social-link a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-link a:hover {
+  color: var(--accent);
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--secondary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, opacity 0.3s;
+  z-index: 1000;
+  padding: 8px;
+}
+
+.scroll-top-btn:hover {
+  background: var(--primary);
+}
+
+.scroll-top-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.scroll-top-btn.visible {
+  display: flex;
+}
+
+.team {
+  padding: 3rem 5%;
+  background: var(--light);
+}
+
+.team h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.team-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.team-text {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.stat-label {
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .team-content {
+    padding: 0 1rem;
+  }
+}
+
+.service-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.modal-title {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.modal-features {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-features li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.modal-features li:before {
+  content: "•";
+  color: var(--secondary);
+  position: absolute;
+  left: 0;
+}
+
+.whatsapp-bubble {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-bubble:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-bubble svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="logo">New<span>Talent</span></div>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a> 
+        <a href="#testimonials">Clientes</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Conectamos el talento con las oportunidades</h1>
+    <p>Somos expertos en identificar y seleccionar a los mejores profesionales para impulsar el &#xe9;xito de tu empresa</p>
+  </section>
+
+  <section class="services" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"/>
+        </svg>
+        <h3>Reclutamiento</h3>
+        <p>B&#xfa;squeda y selecci&#xf3;n de talento especializado para tu empresa</p>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        <h3>Evaluaci&#xf3;n</h3>
+        <p>Evaluaci&#xf3;n integral de competencias y habilidades</p>
+      </div>
+      
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+        </svg>
+        <h3>Head Hunting</h3>
+        <p>B&#xfa;squeda directa de ejecutivos y profesionales de alto nivel</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="nosotros">
+    <h2>Nuestro Equipo</h2>
+    <div class="team-content">
+      <div class="team-text">
+        <h3>Profesionales Expertos en el &#xc1;rea</h3>
+        <p>Nuestro equipo est&#xe1; conformado por profesionales altamente calificados, con una s&#xf3;lida formaci&#xf3;n acad&#xe9;mica y amplia experiencia en procesos de selecci&#xf3;n y evaluaci&#xf3;n de personal.</p>
+        <div class="team-stats">
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">A&#xf1;os de experiencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Profesionales certificados</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <svg class="quote-icon" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+        <div class="avatar">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
+        </div>
+        <p>&quot;NewTalent ha sido fundamental en el crecimiento de nuestro equipo. Su proceso de selecci&#xf3;n es riguroso y efectivo.&quot;</p>
+        <strong>Mar&#xed;a Gonz&#xe1;lez</strong>
+        <p>Gerente de RRHH, Empresa Tecnol&#xf3;gica</p>
+      </div>
+
+      <div class="testimonial-card">
+        <svg class="quote-icon" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+        <div class="avatar">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
+        </div>
+        <p>&quot;Su expertise en el mercado laboral chileno es invaluable. Han encontrado candidatos excepcionales para roles desafiantes.&quot;</p>
+        <strong>Carlos Rodr&#xed;guez</strong>
+        <p>Director Ejecutivo, Empresa de Servicios</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <h2>&#xbf;Listo para encontrar el talento que necesitas?</h2>
+    <p>Contacta con nuestro equipo de especialistas</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/+56975495340?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20reclutamiento%20y%20selecci%C3%B3n." class="contact-button" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp
+      </a>
+      <a href="mailto:contacto@newtalent.cl?subject=Solicitud%20de%20informaci%C3%B3n%20servicios%20NewTalent&amp;body=Hola%2C%0A%0AMe%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20reclutamiento%20y%20selecci%C3%B3n%20que%20ofrecen.%0A%0ASaludos%20cordiales." class="contact-button">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        Email
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-description">
+        <h3>Sobre NewTalent</h3>
+        <p>NewTalent es una consultora l&#xed;der en reclutamiento y selecci&#xf3;n de personal en Chile. Nos especializamos en conectar el mejor talento con las empresas m&#xe1;s importantes del pa&#xed;s, ofreciendo soluciones integrales y personalizadas en gesti&#xf3;n de recursos humanos.</p>
+      </div>
+      <div class="footer-social">
+        <div class="social-link">
+          <a href="https://www.instagram.com/newtalent.cl" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+            </svg>
+            S&#xed;guenos en Instagram
+          </a>
+        </div>
+        <div class="social-link">
+          <a href="https://cl.linkedin.com/company/newtalent-chile" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+            </svg>
+            S&#xed;guenos en LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="recruitmentModal" class="service-modal">
+    <div class="modal-content">
+      <button class="close-modal">&#xd7;</button>
+      <h3 class="modal-title">Reclutamiento</h3>
+      <p class="modal-description">Ofrecemos un servicio integral de b&#xfa;squeda y selecci&#xf3;n de talento, adaptado a las necesidades espec&#xed;ficas de tu empresa.</p>
+      <ul class="modal-features">
+        <li>An&#xe1;lisis detallado del perfil requerido</li>
+        <li>B&#xfa;squeda activa en m&#xfa;ltiples fuentes</li>
+        <li>Evaluaci&#xf3;n t&#xe9;cnica y psicol&#xf3;gica</li>
+        <li>Verificaci&#xf3;n de referencias</li>
+        <li>Presentaci&#xf3;n de terna finalista</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="evaluationModal" class="service-modal">
+    <div class="modal-content">
+      <button class="close-modal">&#xd7;</button>
+      <h3 class="modal-title">Evaluaci&#xf3;n</h3>
+      <p class="modal-description">Realizamos una evaluaci&#xf3;n completa de competencias y habilidades utilizando metodolog&#xed;as probadas.</p>
+      <ul class="modal-features">
+        <li>Assessment Center</li>
+        <li>Evaluaci&#xf3;n psicol&#xf3;gica</li>
+        <li>Test de competencias espec&#xed;ficas</li>
+        <li>Informes detallados</li>
+        <li>Retroalimentaci&#xf3;n personalizada</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="headhuntingModal" class="service-modal">
+    <div class="modal-content">
+      <button class="close-modal">&#xd7;</button>
+      <h3 class="modal-title">Head Hunting</h3>
+      <p class="modal-description">Especialistas en la b&#xfa;squeda y atracci&#xf3;n de ejecutivos y profesionales de alto nivel.</p>
+      <ul class="modal-features">
+        <li>B&#xfa;squeda dirigida y confidencial</li>
+        <li>Mapeo de mercado</li>
+        <li>Acercamiento directo</li>
+        <li>Negociaci&#xf3;n profesional</li>
+        <li>Seguimiento post-contrataci&#xf3;n</li>
+      </ul>
+    </div>
+  </div>
+
+<button id="scrollToTop" class="scroll-top-btn" title="Volver arriba">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+  </svg>
+</button>
+
+<div class="whatsapp-bubble" id="whatsappBubble">
+  <svg viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</div>
+
+<script>function openModal(modalId) {
+  document.getElementById(modalId).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+document.querySelectorAll('.service-card').forEach((card, index) => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => {
+    const modalIds = ['recruitmentModal', 'evaluationModal', 'headhuntingModal'];
+    openModal(modalIds[index]);
+  });
+});
+document.querySelectorAll('.close-modal').forEach(button => {
+  button.addEventListener('click', e => {
+    const modal = e.target.closest('.service-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+});
+document.querySelectorAll('.service-modal').forEach(modal => {
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.service-modal').forEach(modal => {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  }
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+let prevScrollpos = window.pageYOffset;
+const scrollBtn = document.getElementById("scrollToTop");
+window.onscroll = function () {
+  const currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    scrollBtn.style.top = '0';
+  } else {
+    scrollBtn.style.top = '-100px';
+  }
+  prevScrollpos = currentScrollPos;
+};
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+document.getElementById('whatsappBubble').addEventListener('click', function () {
+  window.open('https://wa.me/+56975495340?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20reclutamiento%20y%20selecci%C3%B3n.', '_blank');
+});
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      const headerOffset = 80;
+      const elementPosition = targetSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});</script>
+</body></html>
